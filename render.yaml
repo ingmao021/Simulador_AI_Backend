@@ -16,15 +16,15 @@ services:
         value: 8080
       - key: ALLOWED_ORIGINS
         sync: false        # Se configura manualmente en Render
-      - key: DATABASE_URL
+      - key: SPRING_DATASOURCE_URL
         fromDatabase:
           name: ai-proxy-db
           property: connectionString
-      - key: DB_USERNAME
+      - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: ai-proxy-db
           property: user
-      - key: DB_PASSWORD
+      - key: SPRING_DATASOURCE_PASSWORD
         fromDatabase:
           name: ai-proxy-db
           property: password
@@ -34,4 +34,3 @@ databases:
     databaseName: aiproxy
     user: aiproxyuser
     plan: free
-
